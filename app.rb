@@ -2,7 +2,7 @@ require_relative 'lib/database_connection'
 require 'sinatra/base'
 require 'sinatra/reloader'
 
-DatabaseConnection.connect(' /// ')
+DatabaseConnection.connect
 
 
 class Application < Sinatra::Base
