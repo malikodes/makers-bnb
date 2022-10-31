@@ -11,4 +11,15 @@ class Application < Sinatra::Base
     configure :development do
       register Sinatra::Reloader
     end
+
+    get '/' do
+      repo = SpaceRepository.new
+      @space = repo.all
+      
+      return erb(:all_spaces)
+
+    end
+
+
+
   end
