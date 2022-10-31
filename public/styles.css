@@ -1,0 +1,9 @@
+body {
+    background-color: lavender;
+    margin: 0 auto;
+    max-width: 50%;
+}
+
+a {
+    text-decoration: none;
+}

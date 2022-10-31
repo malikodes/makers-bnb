@@ -18,9 +18,16 @@ class Application < Sinatra::Base
       @spaces = repo.all
       
       return erb(:all_spaces)
-
     end
 
+    get '/spaces/:id' do
+      repo = SpaceRepository.new
+      @space = repo.find(params[:id])
+
+      return erb(:space)
+
+      
+    end
 
 
   end
