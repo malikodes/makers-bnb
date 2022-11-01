@@ -22,7 +22,7 @@ RSpec.describe Application do
         it 'returns a page with all spaces' do
         response = get('/spaces')
         expect(response.status).to eq 200
-        expect(response.body).to include('<h1>All Spaces</h1>')
+        expect(response.body).to include('<h1>Book a Space</h1>')
         end
     end
 
