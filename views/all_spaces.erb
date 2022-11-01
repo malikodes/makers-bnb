@@ -1,8 +1,11 @@
 <html>
+<head>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+</head>
     <body>
         <h1>All Spaces</h1>
         <% @spaces.each do |space| %>
-        <div> <%= space.name %>
+        <div> <a href="/spaces/<%=space.id%>"><%= space.name %> </a>
             <%= space.price %> 
             </div>
             <% end %>

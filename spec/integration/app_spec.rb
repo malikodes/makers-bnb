@@ -24,7 +24,15 @@ RSpec.describe Application do
         expect(response.status).to eq 200
         expect(response.body).to include('<h1>All Spaces</h1>')
         end
+    end
 
+    context 'GET /spaces/:id' do
+        it 'returns an html with a space' do
+            response = get('/spaces/1')
+            expect(response.status).to eq 200
+            expect(response.body).to include('<h1>Place 1</h1>')
+
+        end
     end
 
     context 'get /spaces/new' do
