@@ -25,7 +25,6 @@ class BookingRepository
       sql = 'INSERT INTO bookings (username, start_date, end_date, space_id) VALUES ($1, $2, $3, $4) ;'
       sql_params = [booking.username, booking.start_date, booking.end_date, booking.space_id]
       results = DatabaseConnection.exec_params(sql, sql_params)
-      p find_id(booking.username, booking.start_date, booking.end_date, booking.space_id)
       return find_id(booking.username, booking.start_date, booking.end_date, booking.space_id)
     end
 
