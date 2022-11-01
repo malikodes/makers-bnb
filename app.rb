@@ -36,10 +36,10 @@ class Application < Sinatra::Base
       end
 
       space = Space.new
-      space.name = params[:name]
-      space.description = params[:description]
-      space.price = params[:price]
-      space.availability = params[:availability]
+      space.name = params[:name] if params[:name] !~ /<\w+>/
+      space.description = params[:description] if params[:description] !~ /<\w+>/
+      space.price = params[:price] if params[:price] !~ /<\w+>/
+      space.availability = params[:availability] if params[:availability] !~ /<\w+>/
 
       space_repository = SpaceRepository.new
       space_repository.create(space)
@@ -68,10 +68,10 @@ class Application < Sinatra::Base
         return ''
       end
       booking = Booking.new
-      booking.username = params[:username]
-      booking.start_date = params[:start_date]
-      booking.end_date = params[:end_date]
-      booking.space_id = params[:space_id]
+      booking.username = params[:username] if params[:username] !~ /<\w+>/
+      booking.start_date = params[:start_date] if params[:start_date] !~ /<\w+>/
+      booking.end_date = params[:end_date] if params[:end_date] !~ /<\w+>/
+      booking.space_id = params[:space_id] if params[:space_id] !~ /<\w+>/
       repo = BookingRepository.new
       id = repo.create(booking)
       redirect("/bookings/#{id}")
