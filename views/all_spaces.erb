@@ -5,9 +5,9 @@
     <body>
         <h1>All Spaces</h1>
         <% @spaces.each do |space| %>
-        <div> <a href="/spaces/<%=space.id%>"><%= space.name %> </a>
-            <%= space.price %> 
-            </div>
+        <h1><a href="/spaces/<%=space.id%>"><%= space.name %></a>
+            <%= space.price %>
+            </h1>
             <% end %>
     </body>
 </html>

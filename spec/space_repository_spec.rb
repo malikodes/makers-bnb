@@ -28,6 +28,25 @@ RSpec.describe SpaceRepository do
         expect(space.price).to eq "128"
     end
 
+    it 'creates an album' do
+        repo = SpaceRepository.new
+    
+        space = Space.new
+        space.name = 'Place 4'
+        space.description = 'This is place 4'
+        space.price = '150.50'
+        space.availability = '01/01/2020'
+        repo.create(space)
+    
+        spaces = repo.all
+    
+        expect(spaces.length).to eq(4)
+        expect(spaces.last.name).to eq('Place 4')
+        expect(spaces.last.description).to eq('This is place 4')
+        expect(spaces.last.price).to eq('150.5')
+        expect(spaces.last.availability).to eq('01/01/2020')
+      end
+
 
 end
 
