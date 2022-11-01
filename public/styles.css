@@ -117,6 +117,7 @@ header {
 	justify-content: space-around;
 	align-items: center;
 	margin-left: 2em;
+	width: 100%;
 }
 
 .space-description > * {
