@@ -3,6 +3,7 @@
     <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
 </head>
     <body>
+        <a href="/">Log Out</a>
         <h1>All Spaces</h1>
         <% @spaces.each do |space| %>
         <h1><a href="/spaces/<%=space.id%>"><%= space.name %></a>
