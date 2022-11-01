@@ -20,15 +20,6 @@ class Application < Sinatra::Base
       return erb(:all_spaces)
     end
 
-    get '/spaces/:id' do
-      repo = SpaceRepository.new
-      @space = repo.find(params[:id])
-
-      return erb(:space)
-
-      
-    end
-
     get '/spaces/new' do
       return erb(:new_space)
     end
@@ -47,6 +38,8 @@ class Application < Sinatra::Base
   
       space_repository = SpaceRepository.new
       space_repository.create(space)
+
+      redirect('/spaces')
     end
 
     get '/spaces/:id' do
@@ -59,6 +52,4 @@ class Application < Sinatra::Base
     def invalid_request_parameters?
       return (params[:name] == nil || params[:description] == nil || params[:price] == nil || params[:availability] == nil )
    end
-
- 
   end
