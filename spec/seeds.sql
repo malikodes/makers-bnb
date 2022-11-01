@@ -1,14 +1,5 @@
--- DROP TABLE IF EXISTS spaces;
 
--- CREATE TABLE spaces (
---   id SERIAL PRIMARY KEY,
---   name text,
---   description text,
---   price float,
---   availability text
--- );
-
-TRUNCATE TABLE bookings, spaces RESTART IDENTITY;
+TRUNCATE TABLE bookings, spaces RESTART IDENTITY CASCADE;
 
 INSERT INTO spaces (name, description, price, availability) VALUES
 ('Place 1', 'This is place 1', 228, '12/12/2022'),
