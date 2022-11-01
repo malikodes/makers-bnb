@@ -1,9 +1,25 @@
 <html>
     <body>
+        <a href="/">Log Out</a>
+        <br>
+        <a href="/spaces">Spaces</a>
         <h1><%= @space.name %></h1>
         <p> <%= @space.description %>
-            £<%= @space.price %> 
-            </p>
-            <p>Availability: <%= @space.availability %></p>
+            £<%= @space.price %>
+        </p>
+        <p>Availability: <%= @space.availability %></p>
+
+        <form action="/bookings/<%= @space.id %>" method="POST">
+          <label for="username">Username</label>
+          <input type="text" name="username">
+
+          <label for="start_date">Start Date</label>
+          <input type="date" name="start_date">
+
+          <label for="end_date">End Date</label>
+          <input type="date" name="end_date">
+
+          <input type="submit" value="Request Booking">
+        </form>
     </body>
 </html>
