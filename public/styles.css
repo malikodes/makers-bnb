@@ -53,6 +53,12 @@ header {
     text-align: center;
 }
 
+.container2 {
+    margin: 10% auto 0;
+    max-width: 75%;
+    text-align: center;
+}
+
 .hero {
     margin: 15% auto;
     max-width: 65%;
@@ -76,4 +82,20 @@ header {
 .spaces-card {
     border: 1px solid;
     margin: 5%;
+}
+
+.form-label {
+    float:left;
+  }
+
+.text-input {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 5px 0px 30px;
+}
+
+.submit-input {
+    width:100px;
+    padding: 5px 20px;
+    margin: 0px;
 }
