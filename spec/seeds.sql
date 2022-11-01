@@ -1,12 +1,3 @@
-DROP TABLE IF EXISTS spaces CASCADE; 
-
-CREATE TABLE spaces (
-  id SERIAL PRIMARY KEY,
-  name text,
-  description text,
-  price float,
-  availability text
-);
 
 TRUNCATE TABLE bookings, spaces RESTART IDENTITY CASCADE;
 
