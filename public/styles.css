@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
 
 
@@ -26,8 +26,17 @@ a {
 	color: inherit;
 }
 
+
 a.active {
 	font-weight: bold;
+ }
+
+a:visited{
+  color:rgb(60, 105, 194)
+}
+
+.spaces-card a:visited {
+    color: rgb(60, 105, 194)
 }
 
 /* Header styling */
@@ -67,6 +76,12 @@ header {
     text-align: center;
 }
 
+.container2 {
+    margin: 5% 20%;
+    max-width: 75%;
+    text-align: center;
+}
+
 .hero {
     margin: 15% auto;
     max-width: 65%;
@@ -80,7 +95,7 @@ header {
 	transition: 300ms;
 }
 
-.hero a:hover {
+.hero a:hover, .cta:hover {
     background-color: #ef7579;
 }
 
@@ -93,6 +108,7 @@ header {
 
 .spaces-card {
     border: 1px solid;
+
     margin: 5% 0;
 }
 
@@ -123,3 +139,91 @@ header {
 .space-description > * {
 	margin-right: 1.2em;
 }
+
+
+
+.booking-card {
+  padding: 10px;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fce9e9;
+  border-radius: 5px;
+  box-shadow: 5px 10px 7px -7px #f9bcbc;
+  color: rgb(54, 51, 51);
+}
+
+.info {
+  text-align: left;
+  padding-left: 30%;
+}
+
+
+
+.form-container {
+    margin: 10% auto 0;
+    width: 60%;
+    max-width: 500px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container > input {
+    margin: .5em 0;
+    height: 30px;
+
+}
+
+label {
+    margin-top: 1em;
+}
+
+
+.hero.login {
+    margin: 15% auto 10%;
+}
+
+.cta {
+    background-color: #F6494E;
+    padding: 3% 8%;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 3.5em;
+    }
+
+.form-label {
+    float:left;
+  }
+
+.input-symbol {
+    position: relative;
+}
+.input-symbol input {
+    padding-left:18px;
+}
+.input-symbol:before {
+    position: absolute;
+    top: 0;
+    content:"£";
+    left: 5px;
+}
+
+.text-input {
+    width: 100%;
+    padding: 5px 3px;
+    margin: 5px 0px 30px;
+    font-size:15px;
+}
+
+.submit-input {
+    background-color: #F6494E;
+    padding: 3% 8%;
+    color: white;
+    border-radius: 5px;
+    width:100px;
+    padding: 5px 20px;
+    margin: 0px;
+}
+
