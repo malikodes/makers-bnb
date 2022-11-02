@@ -65,7 +65,7 @@ header {
     border-radius: 5px;
 }
 
-.hero a:hover {
+.hero a:hover, .cta:hover {
     background-color: #ef7579;
 }
 
@@ -78,39 +78,38 @@ header {
     margin: 5%;
 }
 
-.login-container {
-    margin: 5% auto 0;
-    max-width: 75%;
+
+
+.form-container {
+    margin: 10% auto 0;
+    width: 60%;
+    max-width: 500px;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
 }
 
-.login-box {
-    border: 1px solid;
-    margin: 5% 30%;
-    padding: 10px 10px;
+.form-container > input {
+    margin: .5em 0;
+    height: 30px;
+
 }
 
-.login-field-set{
-    margin: auto 20%;
-    padding: 10px 25px;
+label {
+    margin-top: 1em;
 }
 
-.login-field {
-    width: 300px;
-    margin:auto;
-}
 
 .hero.login {
     margin: 15% auto 10%;
 }
 
-label {
-    float: left;
-    clear: left;
-    width: 200px;
-    text-align: left;
-}
-
-input {
-    float: left;
+.cta {
+    background-color: #F6494E;
+    padding: 3% 8%;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 3.5em;
 }
