@@ -13,15 +13,21 @@
         </header>
 
         <div class="form-container">
-        
+
             <h1>Welcome to Makers BnB</h1>
 
-                <label for="username">Username</label>
-                <input type="text" name="username" class="login-field">
-                <label for="password">Password</label>
-                <input type="text" name="password" class="login-field">
-                <%# <button type="submit" class="cta">Log In </button> %>
-                    <a href="/spaces" class="cta">Log In</a>
+            <h1>Log In</h1>
+
+            <form action="/login" method="POST">
+              <label for="email">Email</label>
+              <input type="text" name="email">
+              <label for="password">Password</label>
+              <input type="text" name="password">
+
+              <input type="submit" value="Log In" class="cta">
+            </form>
+
+            <a href="/sign_up">Sign Up</a>
 
         </div>
 
