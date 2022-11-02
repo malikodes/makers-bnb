@@ -16,21 +16,21 @@ RSpec.describe BookingRepository do
     booking = repo.find(1)
 
     expect(booking.id).to eq "1"
-    expect(booking.username).to eq "User1"
+    expect(booking.user_id).to eq "1"
     expect(booking.start_date).to eq "2022-12-12"
   end
 
   it "Creates a new booking" do
     repo = BookingRepository.new
     booking = Booking.new
-    booking.username = "user2"
+    booking.user_id = 1
     booking.start_date = "2022-12-14"
     booking.end_date = "2022-12-15"
     booking.space_id = 2
 
     booking = repo.create(booking)
     new_booking = repo.find(2)
-    expect(new_booking.username).to eq "user2"
+    expect(new_booking.user_id).to eq "1"
     expect(new_booking.start_date).to eq "2022-12-14"
   end
 end

@@ -14,7 +14,7 @@
 
 <div class="container">
         <div class="hero">
-        
+
         <h1><%= @space.name %></h1>
         <p> <%= @space.description %>
             £<%= @space.price %>
@@ -23,8 +23,6 @@
         </div>
 
         <form action="/bookings/<%= @space.id %>" method="POST">
-          <label for="username">Username</label>
-          <input type="text" name="username">
 
           <label for="start_date">Start Date</label>
           <input type="date" name="start_date">
