@@ -40,7 +40,7 @@ RSpec.describe Application do
     it 'returns an html with a space' do
         response = get('/spaces/1')
         expect(response.status).to eq 200
-        expect(response.body).to include('<h1>Book a Space</h1>')
+        expect(response.body).to include('<h1>Place 1</h1>')
     end
   end
 
