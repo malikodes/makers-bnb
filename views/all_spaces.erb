@@ -18,14 +18,14 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             <a href="/spaces/new">List a Space</a>
         </div>
-        
+
         <% @spaces.each do |space| %>
         <div class="spaces-card">
             <h4><a href="/spaces/<%=space.id%>"><%= space.name %></a></h4>
             <p>£<%= space.price %></p>
             <p>Availability<%= space.availability %></p>
-            
-        </div>    
+
+        </div>
             <% end %>
 
 
