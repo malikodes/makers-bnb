@@ -21,23 +21,16 @@ a {
     color: #F6494E;
 }
 
+a:visited{
+    color: inherit;
+}
+
 .menu a:visited, .spaces-card a:visited{
-    /* color:rgb(60, 105, 194) */
 	color: inherit;
 }
 
 
-a.active {
-	font-weight: bold;
- }
 
-a:visited{
-  color:rgb(60, 105, 194)
-}
-
-.spaces-card a:visited {
-    color: rgb(60, 105, 194)
-}
 
 /* Header styling */
 
@@ -184,9 +177,9 @@ label {
     margin: 15% auto 10%;
 }
 
-.cta {
+.cta, .cta a:visited {
     background-color: #F6494E;
-    padding: 3% 8%;
+    padding: 0.8em 2em;
     color: white;
     border-radius: 5px;
     border: none;
