@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
 
 
@@ -23,6 +23,10 @@ a {
 
 .menu a:visited{
     color:rgb(60, 105, 194)
+}
+
+a:visited{
+  color:rgb(60, 105, 194)
 }
 
 .spaces-card a:visited {
@@ -76,4 +80,19 @@ header {
 .spaces-card {
     border: 1px solid;
     margin: 5%;
+}
+
+.booking-card {
+  padding: 10px;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fce9e9;
+  border-radius: 5px;
+  box-shadow: 5px 10px 7px -7px #f9bcbc;
+  color: rgb(54, 51, 51);
+}
+
+.info {
+  text-align: left;
+  padding-left: 30%;
 }
