@@ -139,12 +139,13 @@ class Application < Sinatra::Base
       end
     end
 
-    def invalid_request_parameters?
-      return (params[:name] == nil || params[:description] == nil || params[:price] == nil || params[:availability] == nil )
-    end
 
 
     private
+
+    def invalid_request_parameters?
+      return (params[:name] == nil || params[:description] == nil || params[:price] == nil || params[:availability] == nil )
+    end
 
     def invalid_booking_request_parameters?
       return (params[:start_date] == nil || params[:end_date] == nil || params[:space_id] == nil || params[:user_id] == nil )

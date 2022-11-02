@@ -23,7 +23,7 @@ RSpec.describe Application do
       response = get("/")
 
       expect(response.status).to eq 200
-      expect(response.body).to include "Welcome to Makers BnB"
+      expect(response.body).to include "Welcome to MakersBnB"
       expect(response.body).to include 'Log In'
     end
   end
