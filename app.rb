@@ -152,7 +152,7 @@ class Application < Sinatra::Base
     end
 
     def invalid_user_request_parameters?
-      params[:username].nil? || params[:name].nil? || params[:email].nil? || params[:password].nil?
+      return (params[:username] == "" || params[:name] == "" || params[:email] == "" || params[:password] == "")
     end
 
     def invalid_post_request_parameters?
