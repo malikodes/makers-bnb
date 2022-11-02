@@ -61,7 +61,7 @@ RSpec.describe Application do
 
       response = get("/")
 
-      expect(response.body).to include "<h1>Log In</h1>"
+      expect(response.body).to include '<h1 class="form-header">Log In</h1>'
       expect(response.body).to include '<form action="/login" method="POST">'
     end
   end
@@ -127,7 +127,7 @@ RSpec.describe Application do
       expect(response.body).to include '<form action="/users" method="POST">'
       expect(response.body).to include '<input type="text" name="username">'
       expect(response.body).to include '<input type="text" name="name">'
-      expect(response.body).to include '<input type="text" name="email">'
+      expect(response.body).to include '<input type="email" name="email">'
       expect(response.body).to include '<input type="text" name="password">'
     end
   end

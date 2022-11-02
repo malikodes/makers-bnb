@@ -1,0 +1,34 @@
+.cta-home {
+  width: 100%;
+  margin-top: 0;
+}
+
+.sign-up-link {
+  color: #F6494E;
+}
+
+.sign-up-link:visited {
+  color: #F6494E;
+}
+
+.sign-up-link:hover {
+  color: #a23236;
+}
+
+.sign-up-link:visited:hover {
+  color: #a23236;
+}
+
+.form-container-home {
+  margin: 0 auto;
+  width: 60%;
+  max-width: 500px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  color: #F6494E;
+}
