@@ -54,7 +54,7 @@ header {
 }
 
 .container2 {
-    margin: 10% auto 0;
+    margin: 5% 20%;
     max-width: 75%;
     text-align: center;
 }
@@ -88,13 +88,31 @@ header {
     float:left;
   }
 
+.input-symbol {
+    position: relative;
+}
+.input-symbol input {
+    padding-left:18px;
+}
+.input-symbol:before {
+    position: absolute;
+    top: 0;
+    content:"£";
+    left: 5px;
+}
+
 .text-input {
     width: 100%;
-    padding: 5px 20px;
+    padding: 5px 3px;
     margin: 5px 0px 30px;
+    font-size:15px;
 }
 
 .submit-input {
+    background-color: #F6494E;
+    padding: 3% 8%;
+    color: white;
+    border-radius: 5px;
     width:100px;
     padding: 5px 20px;
     margin: 0px;

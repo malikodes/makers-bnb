@@ -18,32 +18,35 @@
     </div>
 
     <div class="container2">
-        <form method="POST" action="/spaces">
+        <div class="hero">
+            <form method="POST" action="/spaces">
 
-        <label class="form-label">Space name</label>
-        <div>
-            <input class="text-input" type ="text" name="name" />
+            <label class="form-label">Name</label>
+            <div>
+                <input class="text-input" type ="text" name="name" />
+            </div>
+
+            <label class="form-label">Description</label>
+            <div>
+                <input class="text-input" type ="text" name="description" />
+            </div>
+
+            <label class="form-label">Price per night (£)</label>
+            <span class="input-symbol">
+                <input class="text-input" type ="float" name="price" />
+            </span>
+
+            <label class="form-label">Availability (DD/MM/YY)</label>
+            <div> 
+                <input class="text-input" type ="text" name="availability" />
+            </div>
+
+            <div>
+                <input class="submit-input" type ="submit" />
+            </div>
+            </form>
         </div>
-
-        <label class="form-label">Description</label>
-        <div>
-            <input class="text-input" type ="text" name="description" />
-        </div>
-
-        <label class="form-label">Price</label>
-        <div>
-            <input class="text-input" type ="float" name="price" />
-        </div>
-
-        <label class="form-label">Availability</label>
-        <div> 
-            <input class="text-input" type ="text" name="availability" />
-        </div>
-
-        <div>
-            <input class="submit-input" type ="submit" />
-        </div>
-    </form>
-
+    </div>
+    
   </body>
 </html>
