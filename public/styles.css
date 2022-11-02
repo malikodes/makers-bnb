@@ -77,3 +77,40 @@ header {
     border: 1px solid;
     margin: 5%;
 }
+
+.login-container {
+    margin: 5% auto 0;
+    max-width: 75%;
+    text-align: center;
+}
+
+.login-box {
+    border: 1px solid;
+    margin: 5% 30%;
+    padding: 10px 10px;
+}
+
+.login-field-set{
+    margin: auto 20%;
+    padding: 10px 25px;
+}
+
+.login-field {
+    width: 300px;
+    margin:auto;
+}
+
+.hero.login {
+    margin: 15% auto 10%;
+}
+
+label {
+    float: left;
+    clear: left;
+    width: 200px;
+    text-align: left;
+}
+
+input {
+    float: left;
+}

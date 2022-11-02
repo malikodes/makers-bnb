@@ -1,18 +1,31 @@
 <html>
+    <head>
+        <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+    </head>
+
     <body>
-        <h1>Welcome to Makers BnB</h1>
+    <div class="login-container">
 
-        <label for="username">Username</label>
-        <input type="text" name="username">
+            <img src="logo.png" alt ="Makers BnB" >
 
-        <label for="email">Email</label>
-        <input type="text" name="email">
-
-        <label for="password">Password</label>
-        <input type="text" name="password">
-
-        <a href="/spaces">Log In</a>
-
+    
+            <h1>Welcome to Makers BnB</h1>
+            <div class="login-box">
+                <div class="login-field-set">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="login-field">
+                </div>
+  
+                <div class="login-field-set">
+                    <label for="password">Password</label>
+                    <input type="text" name="password" class="login-field">
+                </div>
+                <div class="hero login">   
+                    <a href="/spaces">Log In</a>
+                </div>
+            </div> 
+ 
+        </div>
 
     </body>
 </html>
