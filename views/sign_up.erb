@@ -1,6 +1,6 @@
 <html>
   <head>
-    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+    <link href="<%= url('/sign_up_styles.css') %>" rel="stylesheet" type="text/css" />
   </head>
     <body>
 
@@ -13,27 +13,29 @@
     </header>
 
     <div class="container">
-        <h1>List a Space</h1>
+        <h1>Feel at home, anywhere</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
 
     <div class="container2">
         <div class="hero">
+          <h2>Sign up to MakersBnB</h2>
+
           <form action="/users" method="POST">
 
-            <label for="username">Username</label>
-            <input type="text" name="username">
+            <label class="form-label" for="username">Username</label>
+            <input class="text-input" type="text" name="username">
 
-            <label for="name">Name</label>
-            <input type="text" name="name">
+            <label class="form-label" for="name">Name</label>
+            <input class="text-input" type="text" name="name">
 
-            <label for="email">Email</label>
-            <input type="email" name="email">
+            <label class="form-label" for="email">Email</label>
+            <input class="text-input" type="email" name="email">
 
-            <label for="password">Password</label>
-            <input type="text" name="password">
+            <label class="form-label" for="password">Password</label>
+            <input class="text-input" type="text" name="password">
 
-            <input type="submit" value="Sign Up" class="button">
+            <input class="submit-input" type="submit" value="Sign Up" class="button">
           </form>
         </div>
     </div>
