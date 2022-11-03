@@ -1,4 +1,3 @@
-
 /* Login pages */
 
 .container {
@@ -20,10 +19,11 @@
     /* background-color: #F6494E; */
     padding: 0.8em 2em;
     border-radius: 5px;
-    border: 1px solid #f6494f;;
+    border: 1px solid #f6494f;
+    ;
     margin-top: 3.5em;
     margin-left: 1em;
-}    
+}
 
 .button-container {
     margin-top: 3em;
@@ -36,14 +36,8 @@
     cursor: pointer;
     font-size: inherit;
     margin-top: -1px
-    
 }
 
 .logout-btn:hover {
     color: #F6494E;
 }
-
-
-
-
-
