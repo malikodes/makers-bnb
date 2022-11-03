@@ -146,9 +146,10 @@ class Application < Sinatra::Base
         redirect("/")
       else
         booking_repo = BookingRepository.new
-        space_repo = SpaceRepository.new
+        @space_repo = SpaceRepository.new
         user_repo = UserRepository.new
         @user = user_repo.find_by_id(session[:user_id])
+        @bookings = booking_repo.all_by_user(session[:user_id])
         return erb(:requests)
       end
     end
