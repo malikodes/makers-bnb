@@ -93,11 +93,13 @@ class Application < Sinatra::Base
       end
 
       space = Space.new
+      space.user_id = session[:user_id]
       space.name = params[:name] if params[:name] !~ /<\w+>/
       space.description = params[:description] if params[:description] !~ /<\w+>/
       space.price = params[:price] if params[:price] !~ /<\w+>/
       space.availability = params[:availability] if params[:availability] !~ /<\w+>/
 
+      
       space_repository = SpaceRepository.new
       space_repository.create(space)
 

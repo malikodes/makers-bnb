@@ -3,7 +3,7 @@ require_relative 'space'
 class SpaceRepository
 
     def all
-        sql = 'SELECT id, name, description, price, availability FROM spaces;'
+        sql = 'SELECT id, name, description, price, availability, user_id FROM spaces;'
         results = DatabaseConnection.exec_params(sql,[])
 
         spaces = []
@@ -15,6 +15,7 @@ class SpaceRepository
             space.description = record['description']
             space.price = record['price']
             space.availability = record['availability']
+            space.user_id = record['user_id']
 
             spaces << space
         end
@@ -24,7 +25,7 @@ class SpaceRepository
     end
 
     def find(id)
-        sql = 'SELECT id, name, description, price, availability FROM spaces WHERE id = $1;'
+        sql = 'SELECT id, name, description, price, availability, user_id FROM spaces WHERE id = $1;'
         results = DatabaseConnection.exec_params(sql,[id])
 
         record = results[0]
@@ -35,14 +36,15 @@ class SpaceRepository
         space.description = record['description']
         space.price = record['price']
         space.availability = record['availability']
+        space.user_id = record['user_id']
 
         return space
 
     end
 
     def create(space)
-        sql = 'INSERT INTO spaces (name, description, price, availability) VALUES ($1, $2, $3, $4);'
-        result_set = DatabaseConnection.exec_params(sql, [space.name, space.description, space.price, space.availability])
+        sql = 'INSERT INTO spaces (name, description, price, availability, user_id) VALUES ($1, $2, $3, $4, $5);'
+        result_set = DatabaseConnection.exec_params(sql, [space.name, space.description, space.price, space.availability, space.user_id])
     end
 
 end
