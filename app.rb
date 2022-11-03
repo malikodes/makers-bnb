@@ -17,7 +17,7 @@ class Application < Sinatra::Base
       register Sinatra::Reloader
     end
 
-    
+
     get '/' do
       if session[:user_id].nil?
         erb(:home)
@@ -107,6 +107,7 @@ class Application < Sinatra::Base
     get '/spaces/:id' do
       repo = SpaceRepository.new
       @space = repo.find(params[:id])
+      @user_id = session[:user_id]
 
       return erb(:space)
     end
@@ -149,7 +150,7 @@ class Application < Sinatra::Base
     end
 
     def invalid_booking_request_parameters?
-      return (params[:start_date] == nil || params[:end_date] == nil || params[:space_id] == nil || params[:user_id] == nil )
+      return (params[:start_date] == nil || params[:end_date] == nil || params[:space_id] == nil || session[:user_id] == nil )
     end
 
     def invalid_user_request_parameters?
