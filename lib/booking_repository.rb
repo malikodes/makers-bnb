@@ -22,7 +22,7 @@ class BookingRepository
 
 
     def create(booking)
-      sql = 'INSERT INTO bookings ( start_date, end_date, space_id, user_id) VALUES ($1, $2, $3, $4) ;'
+      sql = 'INSERT INTO bookings (start_date, end_date, space_id, user_id) VALUES ($1, $2, $3, $4) ;'
       sql_params = [booking.start_date, booking.end_date, booking.space_id, booking.user_id]
       results = DatabaseConnection.exec_params(sql, sql_params)
       return find_id(booking.start_date, booking.end_date, booking.space_id, booking.user_id)
