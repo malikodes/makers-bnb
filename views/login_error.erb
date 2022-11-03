@@ -1,4 +1,21 @@
-<div class="container">
+<html>
+  <head>
+      <link href="<%= url('/login_error_sucess.css') %>" rel="stylesheet" type="text/css" />
+      <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
 
-  <p>Log in failed please <a href="/">try again</a></p>
-</div>
+    <header>
+        <div class="logo"><img src="logo.png" alt="Makersbnb logo"></div>
+            <ul class="menu">
+                <li><a href="/spaces">Spaces</a></li>
+                <li><a href="/">Log In</a></li>
+            </ul>
+      </header>
+
+    <div class="container">
+      <p>Log in failed please <a href="/" class="action-link">try again</a></p>
+    </div>
+
+</body>
+</html>
