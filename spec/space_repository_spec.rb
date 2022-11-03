@@ -5,9 +5,9 @@ def reset_spaces_table
     connection = PG.connect({ host: '127.0.0.1', dbname: 'makersbnb_test' })
     connection.exec(seed_sql)
   end
-  
+
 RSpec.describe SpaceRepository do
-    before(:each) do 
+    before(:each) do
         reset_spaces_table
     end
 
@@ -30,7 +30,7 @@ RSpec.describe SpaceRepository do
 
     it 'creates a space' do
         repo = SpaceRepository.new
-    
+
         space = Space.new
         space.name = 'Place 4'
         space.description = 'This is place 4'
@@ -38,9 +38,9 @@ RSpec.describe SpaceRepository do
         space.availability = '01/01/2020'
         space.user_id = 1
         repo.create(space)
-    
+
         spaces = repo.all
-    
+
         expect(spaces.length).to eq(4)
         expect(spaces.last.name).to eq('Place 4')
         expect(spaces.last.description).to eq('This is place 4')
@@ -49,7 +49,12 @@ RSpec.describe SpaceRepository do
         expect(spaces.last.user_id).to eq('1')
       end
 
-
+      it "returns a list of space with user_id = 1" do
+        repo = SpaceRepository.new
+        spaces = repo.all_ids_by_user(1)
+        expect(spaces.length).to eq 3
+        expect(spaces[0]).to eq '1'
+        expect(spaces[1]).to eq '2'
+        expect(spaces[2]).to eq '3'
+      end
 end
-
-
