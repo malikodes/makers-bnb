@@ -17,6 +17,7 @@ class Application < Sinatra::Base
       register Sinatra::Reloader
     end
 
+    
     get '/' do
       if session[:user_id].nil?
         erb(:home)
