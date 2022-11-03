@@ -19,7 +19,7 @@ RSpec.describe SpaceRepository do
         expect(spaces[0].name).to eq "Place 1"
     end
 
-    it "finds the space with id of 1" do
+    it "finds the space with id of 2" do
         repo = SpaceRepository.new
         space = repo.find(2)
 
@@ -28,7 +28,7 @@ RSpec.describe SpaceRepository do
         expect(space.price).to eq "128"
     end
 
-    it 'creates an album' do
+    it 'creates a space' do
         repo = SpaceRepository.new
     
         space = Space.new
@@ -36,6 +36,7 @@ RSpec.describe SpaceRepository do
         space.description = 'This is place 4'
         space.price = '150.50'
         space.availability = '01/01/2020'
+        space.user_id = 1
         repo.create(space)
     
         spaces = repo.all
@@ -45,6 +46,7 @@ RSpec.describe SpaceRepository do
         expect(spaces.last.description).to eq('This is place 4')
         expect(spaces.last.price).to eq('150.5')
         expect(spaces.last.availability).to eq('01/01/2020')
+        expect(spaces.last.user_id).to eq('1')
       end
 
 
