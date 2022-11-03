@@ -119,7 +119,7 @@ class Application < Sinatra::Base
       @booking = booking_repo.find(params[:id])
       @space = space_repo.find(@booking.space_id)
       @user = user_repo.find_by_id(session[:user_id])
-      return erb(:requests)
+      return erb(:booking_confirmation)
     end
 
     post '/bookings/:space_id' do
@@ -141,7 +141,18 @@ class Application < Sinatra::Base
       end
     end
 
-
+    get '/requests' do
+      if session[:user_id].nil?
+        redirect("/")
+      else
+        booking_repo = BookingRepository.new
+        @space_repo = SpaceRepository.new
+        user_repo = UserRepository.new
+        @user = user_repo.find_by_id(session[:user_id])
+        @bookings = booking_repo.all_by_user(session[:user_id])
+        return erb(:requests)
+      end
+    end
 
     private
 

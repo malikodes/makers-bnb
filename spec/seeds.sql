@@ -9,5 +9,5 @@ INSERT INTO spaces (name, description, price, availability, user_id) VALUES
 ('Place 2', 'This is place 2', 128, '14/12/2022', 1),
 ('Place 3', 'This is place 3', 159, '17/12/2022', 1);
 
-INSERT INTO bookings (start_date, end_date, space_id, user_id) VALUES
-('12/12/2022', '12/13/2022', 1, 1);
+INSERT INTO bookings (start_date, end_date, confirmed, space_id, user_id) VALUES
+('12/12/2022', '12/13/2022', null, 1, 1);

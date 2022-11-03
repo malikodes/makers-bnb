@@ -1,29 +1,60 @@
 <html>
-    <head>
-        <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-      <header>
-        <div class="logo"><img src="../logo.png" > </div>
+  <head>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+    <link href="<%= url('/requests_style.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <header>
+        <div class="logo"><a href="/spaces"><img src="logo.png"></a></div>
         <div class="menu">
           <a href="/">Log Out</a>
-          <a href="/spaces">Spaces</a>
-          <a href="/spaces/<%= @booking.space_id %>"><%= @space.name %></a>
+          <a href="/spaces">All Spaces</a>
         </div>
       </header>
 
-      <div class="container">
-        <h1>Booking Confirmation</h1>
-        <div class="booking-card">
-          <div class="info">
-            <p><strong>Space: </strong><a href="/spaces/<%= @booking.space_id %>"><%= @space.name %></a></p>
-            <p><strong>Username: </strong><%= @user.username.capitalize %></p>
-            <p><strong>Start Date: </strong><%= DateTime.parse(@booking.start_date).strftime("%d/%m/%Y") %></p>
-            <p><strong>End Date:</strong> <%= DateTime.parse(@booking.end_date).strftime("%d/%m/%Y") %></p>
+      <div class="container2">
+
+        <div class="requests-div">
+          <div class="my-bookings">
+              <h2>Requests I've Made</h2>
+              <% @bookings.each do |booking| %>
+                <% space = @space_repo.find(booking.space_id)  %>
+                <div class="booking-card-requests">
+                    <p><strong>Space: </strong><a href="/spaces/<%= booking.space_id %>" class="place-link"><%= space.name %></a></p>
+                    <p><strong>Start Date: </strong><%= DateTime.parse(booking.start_date).strftime("%d/%m/%Y") %></p>
+                    <p><strong>End Date:</strong> <%= DateTime.parse(booking.end_date).strftime("%d/%m/%Y") %></p>
+                    <% if booking.confirmed.nil? %>
+                      <p><strong>Status: </strong>Awaiting Confirmation</p>
+                    <% elsif booking.confirmed == true %>
+                      <p><strong>Status: </strong>Confirmed</p>
+                    <% elsif booking.confirmed == false %>
+                      <p><strong>Status: </strong>Denied</p>
+                    <% end %>
+                </div>
+              <% end %>
+          </div>
+
+          <div class="my-bookings">
+              <h2>Requests I've Recieved</h2>
+              <% @bookings.each do |booking| %>
+                <% space = @space_repo.find(booking.space_id)  %>
+                <div class="booking-card-requests">
+                    <p><strong>Space: </strong><a href="/spaces/<%= booking.space_id %>" class="place-link"><%= space.name %></a></p>
+                    <p><strong>Start Date: </strong><%= DateTime.parse(booking.start_date).strftime("%d/%m/%Y") %></p>
+                    <p><strong>End Date:</strong> <%= DateTime.parse(booking.end_date).strftime("%d/%m/%Y") %></p>
+                    <% if booking.confirmed.nil? %>
+                      <p><strong>Status: </strong>Awaiting Confirmation</p>
+                    <% elsif booking.confirmed == true %>
+                      <p><strong>Status: </strong>Confirmed</p>
+                    <% elsif booking.confirmed == false %>
+                      <p><strong>Status: </strong>Denied</p>
+                    <% end %>
+                </div>
+              <% end %>
           </div>
         </div>
+
       </div>
-    </body>
-
-
-</html
+  </body>
+</html>

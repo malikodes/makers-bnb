@@ -111,7 +111,7 @@ RSpec.describe Application do
 
       response = get('/bookings/2')
 
-      expect(response.body).to include('<h1>Booking Confirmation</h1>')
+      expect(response.body).to include('<h1>Booking Request Confirmation</h1>')
       expect(response.body).to include('<p><strong>Username: </strong>Olivia_rodrigo</p>')
       expect(response.body).to include('<p><strong>Space: </strong><a href="/spaces/2">Place 2</a></p>')
       expect(response.body).to include('<p><strong>Start Date: </strong>14/12/2022</p>')
