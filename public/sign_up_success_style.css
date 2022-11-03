@@ -1,0 +1,18 @@
+.success-button {
+  background-color: #F6494E;
+  padding: 10vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  border-radius: 5px;
+  margin: 50px;
+
+}
+
+  .success-button:visited {
+    color: white;
+  }
+
+  .succes-button-container {
+    padding: 20px;
+  }

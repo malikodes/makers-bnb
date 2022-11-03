@@ -1,8 +1,27 @@
-<div class="container">
+<html>
+  <head>
+      <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+      <link href="<%= url('/sign_up_success_style.css') %>" rel="stylesheet" type="text/css" />
+  </head>
 
-  <p>You have successfully signed up!</p>
+  <body>
+    <header>
+      <div class="logo"><a href="/spaces"><img src="logo.png"></a></div>
+      <div class="menu">
+        <a href="/spaces">All Spaces</a>
+      </div>
+    </header>
 
-  <a href="/login">Log In</a>
-  <a href="/posts">Peep Board</a>
+    <div class="container">
 
-</div>
+      <p>You have successfully signed up!</p>
+
+      <div class="succes-button-container">
+        <a class="success-button" href="/">Log In</a>
+      </div>
+
+    </div>
+
+  </body>
+
+</html>
