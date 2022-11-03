@@ -27,8 +27,10 @@ RSpec.describe BookingRepository do
     booking.start_date = "2022-12-14"
     booking.end_date = "2022-12-15"
     booking.space_id = 2
+    booking.confirmed = nil
 
-    booking = repo.create(booking)
+    booking_test = repo.create(booking)
+    expect(booking_test).to eq "2"
     new_booking = repo.find(2)
     expect(new_booking.user_id).to eq "1"
     expect(new_booking.start_date).to eq "2022-12-14"
