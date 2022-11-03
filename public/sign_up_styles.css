@@ -1,0 +1,99 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+
+/* Links styling */
+
+a {
+  text-decoration: none;
+}
+
+a.active {
+font-weight: bold;
+}
+
+a:visited{
+color:rgb(60, 105, 194)
+}
+
+/* Header styling */
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+li a {
+text-decoration: none;
+  display: block;
+padding: 0 .5em;
+}
+
+header {
+  margin: 2% auto 0;
+  max-width: 75%;
+  display: flex;
+  justify-content: space-between;
+  height: 6vh;
+}
+
+/* Hero section */
+
+.container {
+  margin: 15% auto 0;
+  max-width: 75%;
+  text-align: center;
+}
+
+.container2 {
+  margin: 5% 20%;
+  max-width: 75%;
+  text-align: center;
+}
+
+.hero {
+  margin: 15% auto;
+  max-width: 65%;
+}
+
+.hero a {
+  background-color: #F6494E;
+  padding: 3% 8%;
+  color: white;
+  border-radius: 5px;
+transition: 300ms;
+}
+
+.hero a:hover, .cta:hover {
+  background-color: #ef7579;
+}
+
+.hero p {
+  margin-bottom: 10%;
+}
+
+.form-label {
+  float:left;
+}
+
+.text-input {
+  width: 100%;
+  padding: 5px 3px;
+  margin: 5px 0px 30px;
+  font-size:15px;
+}
+
+.submit-input {
+  background-color: #F6494E;
+  padding: 3% 8%;
+  color: white;
+  border-radius: 5px;
+  width:100px;
+  padding: 5px 20px;
+  margin: 0px;
+}
