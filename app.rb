@@ -98,7 +98,6 @@ class Application < Sinatra::Base
       space.name = params[:name] if params[:name] !~ /<\w+>/
       space.description = params[:description] if params[:description] !~ /<\w+>/
       space.price = params[:price] if params[:price] !~ /<\w+>/
-      space.availability = params[:availability] if params[:availability] !~ /<\w+>/
 
 
       space_repository = SpaceRepository.new
@@ -196,7 +195,7 @@ class Application < Sinatra::Base
     private
 
     def invalid_request_parameters?
-      return (params[:name] == nil || params[:description] == nil || params[:price] == nil || params[:availability] == nil )
+      return (params[:name] == nil || params[:description] == nil || params[:price] == nil )
     end
 
     def invalid_booking_request_parameters?

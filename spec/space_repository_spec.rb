@@ -35,7 +35,6 @@ RSpec.describe SpaceRepository do
         space.name = 'Place 4'
         space.description = 'This is place 4'
         space.price = '150.50'
-        space.availability = '01/01/2020'
         space.user_id = 1
         repo.create(space)
 
@@ -45,7 +44,6 @@ RSpec.describe SpaceRepository do
         expect(spaces.last.name).to eq('Place 4')
         expect(spaces.last.description).to eq('This is place 4')
         expect(spaces.last.price).to eq('150.5')
-        expect(spaces.last.availability).to eq('01/01/2020')
         expect(spaces.last.user_id).to eq('1')
       end
 
@@ -53,7 +51,7 @@ RSpec.describe SpaceRepository do
         repo = SpaceRepository.new
         spaces = repo.find_all(["1"])
         expect(spaces.length).to eq 2
-        
+
       end
 
 
