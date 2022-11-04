@@ -220,3 +220,10 @@ label {
     margin: 0px;
 }
 
+.menu li a:visited {
+  color: black;
+}
+
+.menu li a {
+  color: black;
+}

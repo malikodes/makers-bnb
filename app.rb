@@ -94,10 +94,12 @@ class Application < Sinatra::Base
       end
 
       space = Space.new
+      space.user_id = session[:user_id]
       space.name = params[:name] if params[:name] !~ /<\w+>/
       space.description = params[:description] if params[:description] !~ /<\w+>/
       space.price = params[:price] if params[:price] !~ /<\w+>/
       space.availability = params[:availability] if params[:availability] !~ /<\w+>/
+
 
       space_repository = SpaceRepository.new
       space_repository.create(space)
@@ -120,7 +122,7 @@ class Application < Sinatra::Base
       @booking = booking_repo.find(params[:id])
       @space = space_repo.find(@booking.space_id)
       @user = user_repo.find_by_id(session[:user_id])
-      return erb(:requests)
+      return erb(:booking_confirmation)
     end
 
     post '/bookings/:space_id' do
@@ -142,6 +144,30 @@ class Application < Sinatra::Base
       end
     end
 
+    get '/requests' do
+      if session[:user_id].nil?
+        redirect("/")
+      else
+        booking_repo = BookingRepository.new
+        @space_repo = SpaceRepository.new
+        @user_repo = UserRepository.new
+        spaces = @space_repo.all_ids_by_user(session[:user_id])
+        @booking_requests = booking_repo.all_by_space_user(spaces)
+        @user = @user_repo.find_by_id(session[:user_id])
+        @bookings = booking_repo.all_by_user(session[:user_id])
+        return erb(:requests)
+      end
+    end
+
+    post '/confirming/:booking_id' do
+      booking_id = params[:booking_id]
+      repo = BookingRepository.new
+      booking = repo.find(booking_id)
+      booking.confirmed = true
+      repo.update_confirmed(booking)
+      redirect("/requests")
+    end
+
 
     post '/search' do
       start_date = params[:start_date]
@@ -153,19 +179,18 @@ class Application < Sinatra::Base
       @unavailable_spaces = unavailability.filter(start_date, end_date)
       @spaces = space_repo.find_all(@unavailable_spaces)
 
-      
       return erb(:all_spaces)
-
-
-
     end
 
 
-
-
-
-
-
+    post '/denying/:booking_id' do
+      booking_id = params[:booking_id]
+      repo = BookingRepository.new
+      booking = repo.find(booking_id)
+      booking.confirmed = false
+      repo.update_confirmed(booking)
+      redirect("/requests")
+    end
 
 
     private
