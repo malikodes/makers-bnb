@@ -27,7 +27,7 @@
                   <p>You don't have any bookings yet!</p>
                 </div>
               <% else %>
-                <% @bookings.each do |booking| %>
+                <% @bookings.reverse.each do |booking| %>
                   <% space = @space_repo.find(booking.space_id)  %>
                   <% space_user = @user_repo.find_by_id(space.user_id)  %>
                   <div class="booking-card-requests">
