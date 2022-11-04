@@ -4,6 +4,7 @@ require_relative 'lib/database_connection'
 require_relative 'lib/space_repository'
 require_relative 'lib/booking_repository'
 require_relative 'lib/user_repository'
+require_relative 'lib/unavailability_repo'
 
 DatabaseConnection.connect
 
@@ -142,6 +143,30 @@ class Application < Sinatra::Base
     end
 
 
+    post '/search' do
+      start_date = params[:start_date]
+      end_date = params[:end_date]
+
+      unavailability = UnavailabilityRepository.new
+      space_repo = SpaceRepository.new
+
+      @unavailable_spaces = unavailability.filter(start_date, end_date)
+      @spaces = space_repo.find_all(@unavailable_spaces)
+
+      
+      return erb(:all_spaces)
+
+
+
+    end
+
+
+
+
+
+
+
+
 
     private
 
@@ -160,4 +185,5 @@ class Application < Sinatra::Base
     def invalid_post_request_parameters?
       params[:content].nil?
     end
+
   end

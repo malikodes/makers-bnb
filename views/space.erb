@@ -25,10 +25,10 @@
         <form action="/bookings/<%= @space.id %>" method="POST">
 
           <label for="start_date">Start Date</label>
-          <input type="date" name="start_date">
+          <input type="date" name="start_date" min="<%= Date.today.strftime('%Y-%m-%d') %>">
 
           <label for="end_date">End Date</label>
-          <input type="date" name="end_date">
+          <input type="date" name="end_date" min="<%= Date.today.strftime('%Y-%m-%d') %>">
 
           <input type="submit" value="Request Booking">
         </form>

@@ -35,3 +35,12 @@ CREATE TABLE bookings (
     references users(id)
     on delete cascade
 );
+
+CREATE TABLE unavailable_dates (
+  id SERIAL PRIMARY KEY,
+  unavailable_date date,
+  space_id int,
+  constraint fk_space foreign key(space_id)
+    references spaces(id)
+    on delete cascade
+);

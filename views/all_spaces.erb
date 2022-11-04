@@ -19,6 +19,18 @@
             <a href="/spaces/new">List a Space</a>
         </div>
 
+        <form action="/search" method="POST">
+
+          <label for="start_date">Start Date</label>
+          <input type="date" name="start_date" min="<%= Date.today.strftime('%Y-%m-%d') %>">
+
+          <label for="end_date">End Date</label>
+          <input type="date" name="end_date" min="<%= Date.today.strftime('%Y-%m-%d') %>">
+
+          <input type="submit" value="See spaces available">
+        </form>
+
+
         <% @spaces.each do |space| %>
         <div class="spaces-card">
 

@@ -47,6 +47,13 @@ RSpec.describe SpaceRepository do
         expect(spaces.last.availability).to eq('01/01/2020')
       end
 
+      it "finds all spaces available in a date range" do
+        repo = SpaceRepository.new
+        spaces = repo.find_all(["1"])
+        expect(spaces.length).to eq 2
+        
+      end
+
 
 end
 

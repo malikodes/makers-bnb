@@ -49,7 +49,7 @@ RSpec.describe Application do
     it "returns fails" do
       response = post("/login", email: 'olivia_rodrigo@email.com', password: "butterfly")
 
-      expect(response.body).to include '<p>Log in failed please <a href="/">try again</a></p>'
+      expect(response.body).to include '<p>Log in failed please <a href="/" class="action-link">try again</a></p>'
     end
   end
 
@@ -125,10 +125,10 @@ RSpec.describe Application do
 
       expect(response.status).to eq 200
       expect(response.body).to include '<form action="/users" method="POST">'
-      expect(response.body).to include '<input type="text" name="username">'
-      expect(response.body).to include '<input type="text" name="name">'
-      expect(response.body).to include '<input type="email" name="email">'
-      expect(response.body).to include '<input type="text" name="password">'
+      expect(response.body).to include '<input class="text-input" type="text" name="username">'
+      expect(response.body).to include '<input class="text-input" type="text" name="name">'
+      expect(response.body).to include '<input class="text-input" type="email" name="email">'
+      expect(response.body).to include '<input class="text-input" type="text" name="password">'
     end
   end
 
@@ -166,4 +166,18 @@ RSpec.describe Application do
       expect(response.body).to include '<p>Please <a href="/sign_up">try again</a>.</p>'
     end
   end
+
+    context 'POST /search' do
+      it "filters the list of spaces in the page" do
+        response = post('/search', start_date: '12/12/2022', end_date: '13/12/2022')
+        expect(response.status).to eq 200
+        expect(response.body).not_to include ('Place 1')
+      end
+
+
+    end
+
+
+
+
 end
