@@ -154,8 +154,8 @@ RSpec.describe Application do
 
       expect(response.status).to eq 200
       expect(response.body).to include "<p>Sign up failed, this username has already been used.</p>"
-      expect(response.body).to include '<p>Please <a href="/sign_up">try again</a> with a different username.</p>'
-      expect(response.body).to include '<p>Or <a href="/login">log in</a>.</p>'
+      expect(response.body).to include '<p>Please try again with a different username or log in<p> '
+      expect(response.body).to include '<p><a href="/" class="cta">log in</a></p>'
     end
 
     it "redirects to an error page when fields have been left empty" do
@@ -163,7 +163,7 @@ RSpec.describe Application do
 
       expect(response.status).to eq 200
       expect(response.body).to include "<p>Sign up failed, you cannot leave any fields empty.</p>"
-      expect(response.body).to include '<p>Please <a href="/sign_up">try again</a>.</p>'
+      expect(response.body).to include '<a href="/sign_up" class="cta">Sign Up</a>'
     end
   end
 
