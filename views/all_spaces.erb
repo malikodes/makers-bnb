@@ -11,14 +11,14 @@
                 <li><a href="/spaces">Spaces</a></li>
                 <li>
                     <form action="/logout" method="POST">
-                      <input type="submit" value="Logout" class="logout-btn">             
+                      <input type="submit" value="Logout" class="logout-btn">
                     </form>
                 </li>
 
             </ul>
       </header>
 
-    
+
 
      <div class="container">
         <div class="hero">
@@ -46,11 +46,10 @@
             <div class="space-description">
                 <h4><a href="/spaces/<%=space.id%>"><%= space.name %></a></h4>
                 <p>£<%= space.price %></p>
-                <p>Availability: <%= space.availability %></p>
             </div>
-        </div>    
+        </div>
 
-      
+
 
 
             <% end %>

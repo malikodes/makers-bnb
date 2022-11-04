@@ -2,7 +2,7 @@ require_relative 'space'
 
 class SpaceRepository
     def all
-        sql = 'SELECT id, name, description, price, availability, user_id FROM spaces;'
+        sql = 'SELECT id, name, description, price, user_id FROM spaces;'
         results = DatabaseConnection.exec_params(sql,[])
 
         spaces = []
@@ -13,7 +13,6 @@ class SpaceRepository
             space.name = record['name']
             space.description = record['description']
             space.price = record['price']
-            space.availability = record['availability']
             space.user_id = record['user_id']
 
             spaces << space
@@ -22,7 +21,7 @@ class SpaceRepository
     end
 
     def find(id)
-        sql = 'SELECT id, name, description, price, availability, user_id FROM spaces WHERE id = $1;'
+        sql = 'SELECT id, name, description, price, user_id FROM spaces WHERE id = $1;'
         results = DatabaseConnection.exec_params(sql,[id])
 
         record = results[0]
@@ -32,15 +31,14 @@ class SpaceRepository
         space.name = record['name']
         space.description = record['description']
         space.price = record['price']
-        space.availability = record['availability']
         space.user_id = record['user_id']
 
         return space
     end
 
     def create(space)
-        sql = 'INSERT INTO spaces (name, description, price, availability, user_id) VALUES ($1, $2, $3, $4, $5);'
-        result_set = DatabaseConnection.exec_params(sql, [space.name, space.description, space.price, space.availability, space.user_id])
+        sql = 'INSERT INTO spaces (name, description, price, user_id) VALUES ($1, $2, $3, $4);'
+        result_set = DatabaseConnection.exec_params(sql, [space.name, space.description, space.price, space.user_id])
     end
 
 
@@ -50,21 +48,20 @@ class SpaceRepository
         all_spaces = all.map { |space| space.id}
 
         available_spaces = []
-        
+
         space_ids = all_spaces.reject {|space| spaces.include?(space) }
 
         space_ids.each do |space_id|
-            sql = 'SELECT id, name, description, price, availability FROM spaces WHERE id = $1;'
+            sql = 'SELECT id, name, description, price FROM spaces WHERE id = $1;'
             results = DatabaseConnection.exec_params(sql,[space_id])
-    
+
             record = results[0]
-    
+
             space = Space.new
             space.id = record['id']
             space.name = record['name']
             space.description = record['description']
             space.price = record['price']
-            space.availability = record['availability']
 
             available_spaces << space
         end
@@ -86,4 +83,3 @@ class SpaceRepository
       return spaces
     end
 end
-

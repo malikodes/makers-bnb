@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS unavailable_dates;
 DROP TABLE IF EXISTS bookings;
 DROP TABLE IF EXISTS spaces;
 DROP TABLE IF EXISTS users;
@@ -15,7 +16,6 @@ CREATE TABLE spaces (
   name text,
   description text,
   price float,
-  availability text,
   user_id int,
   constraint fk_user foreign key(user_id)
     references users(id)
