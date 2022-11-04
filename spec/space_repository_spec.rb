@@ -49,6 +49,15 @@ RSpec.describe SpaceRepository do
         expect(spaces.last.user_id).to eq('1')
       end
 
+      it "finds all spaces available in a date range" do
+        repo = SpaceRepository.new
+        spaces = repo.find_all(["1"])
+        expect(spaces.length).to eq 2
+        
+      end
+
+
+
       it "returns a list of space with user_id = 1" do
         repo = SpaceRepository.new
         spaces = repo.all_ids_by_user(1)
@@ -57,4 +66,5 @@ RSpec.describe SpaceRepository do
         expect(spaces[1]).to eq '2'
         expect(spaces[2]).to eq '3'
       end
+
 end
