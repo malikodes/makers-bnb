@@ -133,15 +133,16 @@ header {
 	margin-right: 1.2em;
 }
 
+
+
 .booking-card {
   padding: 10px;
-  width: 30vw;
+  width: 50%;
   margin: 0 auto;
   background-color: #fce9e9;
   border-radius: 5px;
   box-shadow: 5px 10px 7px -7px #f9bcbc;
   color: rgb(54, 51, 51);
-  text-align: start;
 }
 
 .info {
@@ -217,4 +218,12 @@ label {
     width:100px;
     padding: 5px 20px;
     margin: 0px;
+}
+
+.menu li a:visited {
+  color: black;
+}
+
+.menu li a {
+  color: black;
 }
